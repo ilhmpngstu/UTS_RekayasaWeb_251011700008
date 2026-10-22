@@ -19,7 +19,7 @@
 | **Tema Proyek** | **Platform Belajar Online** (Sesuai Digit NIM: 8) |
 | **Nama Tabel** | `courses` |
 | **Nama Database** | `db_uts_251011700008` |
-| **Nama Repositori** | `UTS_ILHAMPANGESTU_251011700008_03SIFE003` |
+| **Nama Repositori** | `UTS_RekayasaWeb_251011700008` |
 
 ---
 
@@ -70,8 +70,8 @@ Sesuai ketentuan soal untuk tema digit ke-8:
 
 ### 1. Clone Repositori
 ```bash
-git clone https://github.com/ilhmpngstu/UTS_ILHAMPANGESTU_251011700008_03SIFE003.git
-cd UTS_ILHAMPANGESTU_251011700008_03SIFE003
+git clone https://github.com/ilhmpngstu/UTS_RekayasaWeb_251011700008.git
+cd UTS_RekayasaWeb_251011700008
 ```
 
 ### 2. Instalasi Dependensi PHP

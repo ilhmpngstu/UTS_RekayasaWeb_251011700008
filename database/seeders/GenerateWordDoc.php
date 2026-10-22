@@ -89,11 +89,11 @@ $section->addText('Sesuai ketentuan soal pada Poin D.10 ("Upload source code ke 
 $tableGit = $section->addTable('IdentityTable');
 $tableGit->addRow();
 $tableGit->addCell(3000, ['bgColor' => 'F1F5F9'])->addText('Nama Repositori', $fontStyleBold);
-$tableGit->addCell(5200)->addText('UTS_ILHAMPANGESTU_251011700008_03SIFE003', ['bold' => true, 'color' => '003366']);
+$tableGit->addCell(5200)->addText('UTS_RekayasaWeb_251011700008', ['bold' => true, 'color' => '003366']);
 
 $tableGit->addRow();
 $tableGit->addCell(3000, ['bgColor' => 'F1F5F9'])->addText('Link URL GitHub', $fontStyleBold);
-$tableGit->addCell(5200)->addText('https://github.com/ilhampngstu/UTS_ILHAMPANGESTU_251011700008_03SIFE003', ['color' => '0D6EFD', 'underline' => 'single']);
+$tableGit->addCell(5200)->addText('https://github.com/ilhmpngstu/UTS_RekayasaWeb_251011700008', ['color' => '0D6EFD', 'underline' => 'single']);
 
 $section->addTextBreak(1);
 
