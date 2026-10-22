@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-DESIGN" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a259ff" />
+      <stop offset="100%" stop-color="#1abcfe" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="url(#grad-DESIGN)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+    <line x1="100" y1="0" x2="100" y2="380"/>
+    <line x1="200" y1="0" x2="200" y2="380"/>
+    <line x1="300" y1="0" x2="300" y2="380"/>
+    <line x1="400" y1="0" x2="400" y2="380"/>
+    <line x1="500" y1="0" x2="500" y2="380"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="530" cy="70" r="120" fill="white" fill-opacity="0.05"/>
+  <circle cx="80" cy="320" r="90" fill="white" fill-opacity="0.04"/>
+
+  <!-- Center Graphic Box -->
+  <g transform="translate(120, 20)">
+    <rect x="110" y="65" width="60" height="60" rx="30" fill="#f24e1e"/><rect x="170" y="65" width="60" height="60" rx="30" fill="#ff7262"/><rect x="110" y="125" width="60" height="60" rx="30" fill="#a259ff"/><circle cx="200" cy="155" r="30" fill="#1abcfe"/>
+  </g>
+
+  <!-- Category Badge -->
+  <rect x="40" y="225" width="140" height="28" rx="14" fill="#ffffff" fill-opacity="0.25"/>
+  <text x="110" y="244" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">DESIGN</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="285" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">UI/UX Design Masterclass</text>
+  <text x="40" y="315" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500">Figma & Design Systems</text>
+
+  <!-- Accent line -->
+  <rect x="40" y="340" width="80" height="4" rx="2" fill="#fbbf24"/>
+</svg>
