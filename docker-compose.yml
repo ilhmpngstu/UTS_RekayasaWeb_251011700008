@@ -9,7 +9,7 @@ services:
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
-            - '${APP_PORT:-80}:80'
+            - '${APP_PORT:-8000}:80'
             - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
         environment:
             WWWUSER: '${WWWUSER}'
@@ -20,8 +20,8 @@ services:
             DB_HOST: mysql
             DB_PORT: 3306
             DB_DATABASE: '${DB_DATABASE:-db_uts_251011700008}'
-            DB_USERNAME: '${DB_USERNAME:-root}'
-            DB_PASSWORD: '${DB_PASSWORD:-}'
+            DB_USERNAME: '${DB_USERNAME:-sail}'
+            DB_PASSWORD: '${DB_PASSWORD:-password}'
         volumes:
             - '.:/var/www/html'
         networks:
@@ -33,11 +33,11 @@ services:
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-password}'
             MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_DATABASE: '${DB_DATABASE:-db_uts_251011700008}'
+            MYSQL_USER: '${DB_USERNAME:-sail}'
+            MYSQL_PASSWORD: '${DB_PASSWORD:-password}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
             MYSQL_EXTRA_OPTIONS: '${MYSQL_EXTRA_OPTIONS:-}'
         volumes:
