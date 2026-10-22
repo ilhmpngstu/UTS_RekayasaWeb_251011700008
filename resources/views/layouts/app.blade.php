@@ -114,7 +114,7 @@
             position: relative;
             aspect-ratio: 16 / 10;
             overflow: hidden;
-            background-color: #0f172a;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
         }
 
         .course-img-wrapper img {

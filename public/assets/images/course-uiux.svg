@@ -1,19 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
   <defs>
-    <linearGradient id="grad-DESIGN" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a259ff" />
-      <stop offset="100%" stop-color="#1abcfe" />
+    <linearGradient id="grad-uiux" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#4c1d95" />
     </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.3"/>
-    </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="600" height="380" fill="url(#grad-DESIGN)"/>
+  <rect width="600" height="380" fill="url(#grad-uiux)"/>
 
   <!-- Subtle grid pattern -->
-  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1.5">
     <line x1="0" y1="60" x2="600" y2="60"/>
     <line x1="0" y1="120" x2="600" y2="120"/>
     <line x1="0" y1="180" x2="600" y2="180"/>
@@ -27,22 +24,22 @@
   </g>
 
   <!-- Decorative circles -->
-  <circle cx="530" cy="70" r="120" fill="white" fill-opacity="0.05"/>
-  <circle cx="80" cy="320" r="90" fill="white" fill-opacity="0.04"/>
+  <circle cx="530" cy="70" r="130" fill="white" fill-opacity="0.08"/>
+  <circle cx="70" cy="310" r="90" fill="white" fill-opacity="0.06"/>
 
-  <!-- Center Graphic Box -->
-  <g transform="translate(120, 20)">
-    <rect x="110" y="65" width="60" height="60" rx="30" fill="#f24e1e"/><rect x="170" y="65" width="60" height="60" rx="30" fill="#ff7262"/><rect x="110" y="125" width="60" height="60" rx="30" fill="#a259ff"/><circle cx="200" cy="155" r="30" fill="#1abcfe"/>
+  <!-- Center Graphic Icon -->
+  <g transform="translate(120, 15)">
+    <rect x="110" y="65" width="55" height="55" rx="27" fill="#f43f5e"/><rect x="165" y="65" width="55" height="55" rx="27" fill="#fb923c"/><rect x="110" y="120" width="55" height="55" rx="27" fill="#a855f7"/><circle cx="192" cy="147" r="27" fill="#06b6d4"/>
   </g>
 
   <!-- Category Badge -->
-  <rect x="40" y="225" width="140" height="28" rx="14" fill="#ffffff" fill-opacity="0.25"/>
-  <text x="110" y="244" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">DESIGN</text>
+  <rect x="40" y="222" width="150" height="30" rx="15" fill="#ffffff" fill-opacity="0.25"/>
+  <text x="115" y="242" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">DESIGN</text>
 
-  <!-- Title & Subtitle -->
-  <text x="40" y="285" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">UI/UX Design Masterclass</text>
-  <text x="40" y="315" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500">Figma & Design Systems</text>
+  <!-- Title &amp; Subtitle -->
+  <text x="40" y="284" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">UI/UX Design Masterclass</text>
+  <text x="40" y="315" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500">Figma &amp; Design Systems</text>
 
   <!-- Accent line -->
-  <rect x="40" y="340" width="80" height="4" rx="2" fill="#fbbf24"/>
+  <rect x="40" y="338" width="90" height="4" rx="2" fill="#fbbf24"/>
 </svg>

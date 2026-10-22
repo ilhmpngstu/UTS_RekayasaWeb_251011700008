@@ -29,7 +29,7 @@
         <div class="col-lg-8">
             <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
                 <!-- Cover Image Kursus (public/assets/images/) -->
-                <div class="position-relative" style="aspect-ratio: 16/9; background-color: #0f172a; overflow: hidden;">
+                <div class="position-relative" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b 0%, #334155 100%); overflow: hidden;">
                     <img src="{{ $course->image_url }}" alt="{{ $course->title }}" class="w-100 h-100" style="object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 p-3 w-100" style="background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);">
                         <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
