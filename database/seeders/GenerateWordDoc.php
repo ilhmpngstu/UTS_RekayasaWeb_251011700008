@@ -10,16 +10,16 @@ use PhpOffice\PhpWord\SimpleType\JcTable;
 $phpWord = new PhpWord();
 
 // Define Styles
-$phpWord->addTitleStyle(1, ['bold' => true, 'size' => 18, 'color' => '003366', 'name' => 'Calibri'], ['spaceAfter' => 240]);
-$phpWord->addTitleStyle(2, ['bold' => true, 'size' => 14, 'color' => '003366', 'name' => 'Calibri'], ['spaceBefore' => 240, 'spaceAfter' => 120]);
-$phpWord->addTitleStyle(3, ['bold' => true, 'size' => 12, 'color' => '1E293B', 'name' => 'Calibri'], ['spaceBefore' => 180, 'spaceAfter' => 80]);
+$phpWord->addTitleStyle(1, ['bold' => true, 'size' => 16, 'color' => '003366', 'name' => 'Calibri'], ['spaceAfter' => 200]);
+$phpWord->addTitleStyle(2, ['bold' => true, 'size' => 13, 'color' => '003366', 'name' => 'Calibri'], ['spaceBefore' => 200, 'spaceAfter' => 100]);
+$phpWord->addTitleStyle(3, ['bold' => true, 'size' => 11, 'color' => '1E293B', 'name' => 'Calibri'], ['spaceBefore' => 140, 'spaceAfter' => 60]);
 
 $fontStyleBody = ['size' => 11, 'name' => 'Calibri', 'color' => '333333'];
 $fontStyleBold = ['bold' => true, 'size' => 11, 'name' => 'Calibri', 'color' => '111111'];
 $fontStyleSubtitle = ['italic' => true, 'size' => 10, 'name' => 'Calibri', 'color' => '666666'];
 
-$paragraphStyleCenter = ['alignment' => Jc::CENTER, 'spaceAfter' => 120];
-$paragraphStyleJustify = ['alignment' => Jc::BOTH, 'spaceAfter' => 120, 'lineHeight' => 1.15];
+$paragraphStyleCenter = ['alignment' => Jc::CENTER, 'spaceAfter' => 100];
+$paragraphStyleJustify = ['alignment' => Jc::BOTH, 'spaceAfter' => 100, 'lineHeight' => 1.15];
 
 // Section
 $section = $phpWord->addSection([
@@ -30,22 +30,26 @@ $section = $phpWord->addSection([
 ]);
 
 // HEADER KAMPUS
-$section->addText('YAYASAN SASMITA JAYA', ['bold' => true, 'size' => 13, 'name' => 'Calibri'], $paragraphStyleCenter);
+$section->addText('YAYASAN SASMITA JAYA', ['bold' => true, 'size' => 12, 'name' => 'Calibri'], $paragraphStyleCenter);
 $section->addText('UNIVERSITAS PAMULANG', ['bold' => true, 'size' => 16, 'color' => '003366', 'name' => 'Calibri'], $paragraphStyleCenter);
 $section->addText('FAKULTAS ILMU KOMPUTER - PROGRAM STUDI SISTEM INFORMASI S-1', ['bold' => true, 'size' => 10, 'color' => '555555', 'name' => 'Calibri'], $paragraphStyleCenter);
 $section->addText('Jl. Puspitek Raya No. 10, Serpong - Tangerang Selatan | www.unpam.ac.id', ['size' => 9, 'color' => '777777', 'name' => 'Calibri'], $paragraphStyleCenter);
-$section->addLine(['weight' => 2, 'width' => 480, 'height' => 0, 'color' => '003366']);
+
+// Border Pembatas Header
+$tableDivider = $section->addTable(['alignment' => JcTable::CENTER]);
+$tableDivider->addRow();
+$tableDivider->addCell(8200, ['borderBottomSize' => 18, 'borderBottomColor' => '003366']);
 
 $section->addTextBreak(1);
 
 // JUDUL DOKUMENTASI
-$section->addText('LAPORAN DOKUMENTASI HASIL APLIKASI WEB', ['bold' => true, 'size' => 15, 'color' => '003366', 'name' => 'Calibri'], $paragraphStyleCenter);
+$section->addText('LAPORAN DOKUMENTASI HASIL APLIKASI WEB', ['bold' => true, 'size' => 14, 'color' => '003366', 'name' => 'Calibri'], $paragraphStyleCenter);
 $section->addText('UJIAN TENGAH SEMESTER (UTS) SEMESTER GANJIL T.A. 2026/2027', ['bold' => true, 'size' => 12, 'name' => 'Calibri'], $paragraphStyleCenter);
 
 $section->addTextBreak(1);
 
-// TABEL IDENTITAS
-$section->addTitle('A. Identitas Mahasiswa & Penugasan', 2);
+// A. TABEL IDENTITAS
+$section->addTitle('A. Identitas Mahasiswa dan Penugasan', 2);
 
 $tableStyle = [
     'borderSize' => 6,
@@ -68,8 +72,8 @@ $rows = [
     ['Tema Proyek (Sesuai Digit NIM 8)', 'Platform Belajar Online'],
     ['Nama Tabel Database', 'courses'],
     ['Nama Database', 'db_uts_251011700008'],
-    ['Framework & Versi', 'Laravel 11 / 12, PHP 8.4, Bootstrap 5.3 (Lokal)'],
-    ['Web Server / Database Engine', 'MySQL 8.4 (Docker)'],
+    ['Framework dan Versi', 'Laravel 11 / 12, PHP 8.4, Bootstrap 5.3 (Lokal)'],
+    ['Web Server dan Database Engine', 'MySQL 8.4 (Docker)'],
 ];
 
 foreach ($rows as $r) {
@@ -84,7 +88,7 @@ $section->addTextBreak(1);
 
 // B. LINK GITHUB
 $section->addTitle('B. Tautan Repositori GitHub', 2);
-$section->addText('Sesuai ketentuan soal pada Poin D.10 ("Upload source code ke GitHub dengan nama project UTS_NAMA_NIM_KODEKELAS"), berikut adalah informasi repositori proyek:', $fontStyleBody, $paragraphStyleJustify);
+$section->addText('Sesuai ketentuan soal pada Poin D.10 (Upload source code ke GitHub dengan nama project UTS_NAMA_NIM_KODEKELAS), berikut adalah rincian repositori:', $fontStyleBody, $paragraphStyleJustify);
 
 $tableGit = $section->addTable('IdentityTable');
 $tableGit->addRow();
@@ -98,8 +102,8 @@ $tableGit->addCell(5200)->addText('https://github.com/ilhmpngstu/UTS_RekayasaWeb
 $section->addTextBreak(1);
 
 // C. STRUKTUR DATABASE
-$section->addTitle('C. Struktur Tabel Database (`courses`)', 2);
-$section->addText('Tabel courses dibuat menggunakan migration Laravel dan diisi dengan data dummy realistis melalui seeder (Database: `db_uts_251011700008`):', $fontStyleBody, $paragraphStyleJustify);
+$section->addTitle('C. Struktur Tabel Database (courses)', 2);
+$section->addText('Tabel courses dibuat menggunakan migration Laravel dan diisi dengan data dummy realistis melalui seeder (Database: db_uts_251011700008):', $fontStyleBody, $paragraphStyleJustify);
 
 $tableCols = $section->addTable('IdentityTable');
 $headerCell = ['bgColor' => '003366'];
@@ -137,10 +141,10 @@ $section->addPageBreak();
 
 // D. SCREENSHOT HASIL APLIKASI
 $section->addTitle('D. Screenshot Hasil Implementasi Aplikasi Web', 2);
-$section->addText('Berikut adalah tangkapan layar tampilan antarmuka web yang dibangun dengan framework Laravel, Blade Template, dan Bootstrap 5:', $fontStyleBody, $paragraphStyleJustify);
+$section->addText('Berikut adalah tangkapan layar antarmuka web yang dibangun dengan framework Laravel, Blade Template, dan Bootstrap 5:', $fontStyleBody, $paragraphStyleJustify);
 
 // Screenshot 1: Katalog Card Grid
-$section->addTitle('1. Halaman Katalog Kursus (Card Grid & Header Banner UNPAM)', 3);
+$section->addTitle('1. Halaman Katalog Kursus (Card Grid dan Header Banner UNPAM)', 3);
 $section->addText('Menampilkan header resmi Yayasan Sasmita Jaya dan UNPAM, identitas mahasiswa, fitur filter kategori, pencarian, dan daftar kartu kursus responsif.', $fontStyleSubtitle);
 $img1 = __DIR__ . '/../../docs/screenshots/01_halaman_katalog_grid.png';
 if (file_exists($img1)) {
@@ -150,7 +154,7 @@ if (file_exists($img1)) {
 $section->addTextBreak(1);
 
 // Screenshot 2: Tabel Data
-$section->addTitle('2. Halaman Tampilan Tabel Data Kursus (`table` Bootstrap)', 3);
+$section->addTitle('2. Halaman Tampilan Tabel Data Kursus (Table Bootstrap)', 3);
 $section->addText('Menampilkan data tabel courses menggunakan komponen Bootstrap table table-hover table-striped lengkap dengan thumbnail, kategori badge, harga, dan tombol detail.', $fontStyleSubtitle);
 $img2 = __DIR__ . '/../../docs/screenshots/02_halaman_tabel_data.png';
 if (file_exists($img2)) {
@@ -170,7 +174,7 @@ if (file_exists($img3)) {
 $section->addTextBreak(1);
 
 // Screenshot 4: Halaman Identitas Mahasiswa UTS
-$section->addTitle('4. Halaman Identitas Mahasiswa & Informasi Penugasan UTS', 3);
+$section->addTitle('4. Halaman Identitas Mahasiswa dan Informasi Penugasan UTS', 3);
 $section->addText('Menampilkan identitas lengkap mahasiswa pengembang, rincian teknis penugasan UTS, checklist pemenuhan seluruh butir soal, dan ringkasan statistik database.', $fontStyleSubtitle);
 $img4 = __DIR__ . '/../../docs/screenshots/04_halaman_identitas_uts.png';
 if (file_exists($img4)) {
@@ -193,4 +197,3 @@ $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save($outputFile);
 
 echo "Word Document generated at: " . $outputFile . PHP_EOL;
-
