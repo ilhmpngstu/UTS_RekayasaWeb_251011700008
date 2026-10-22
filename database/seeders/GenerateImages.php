@@ -200,3 +200,4 @@ $heroIllusSvg = <<<SVG
 SVG;
 file_put_contents(__DIR__ . '/../../public/assets/images/hero-illustration.svg', $heroIllusSvg);
 echo "Generated: hero-illustration.svg" . PHP_EOL;
+

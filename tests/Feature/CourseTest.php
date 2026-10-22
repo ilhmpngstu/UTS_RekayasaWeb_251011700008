@@ -86,3 +86,4 @@ class CourseTest extends TestCase
         $response->assertSee('Afif Efendi');
     }
 }
+

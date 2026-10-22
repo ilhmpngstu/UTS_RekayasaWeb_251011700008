@@ -193,3 +193,4 @@ $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save($outputFile);
 
 echo "Word Document generated at: " . $outputFile . PHP_EOL;
+
