@@ -55,6 +55,19 @@
                     @endif
                 </div>
             </form>
+
+            <!-- Quick Category Filter Pills -->
+            <div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top">
+                <span class="text-secondary small align-self-center me-1"><i class="bi bi-tags text-primary me-1"></i>Filter Kategori:</span>
+                <a href="{{ route('courses.table', array_filter(['search' => request('search')])) }}" class="badge rounded-pill text-decoration-none {{ !request('category') ? 'bg-primary text-white' : 'bg-light text-dark border' }} px-3 py-2">
+                    Semua ({{ $courses->count() }})
+                </a>
+                @foreach($categories as $cat)
+                    <a href="{{ route('courses.table', array_filter(['category' => $cat, 'search' => request('search')])) }}" class="badge rounded-pill text-decoration-none {{ request('category') == $cat ? 'bg-primary text-white' : 'bg-light text-dark border' }} px-3 py-2">
+                        {{ $cat }}
+                    </a>
+                @endforeach
+            </div>
         </div>
     </div>
 
@@ -110,9 +123,11 @@
 
                             <!-- Category -->
                             <td>
-                                <span class="badge-category text-nowrap">
-                                    {{ $course->category }}
-                                </span>
+                                <a href="{{ route('courses.table', ['category' => $course->category]) }}" class="text-decoration-none" title="Filter kategori {{ $course->category }}">
+                                    <span class="badge-category text-nowrap">
+                                        {{ $course->category }}
+                                    </span>
+                                </a>
                             </td>
 
                             <!-- Duration -->

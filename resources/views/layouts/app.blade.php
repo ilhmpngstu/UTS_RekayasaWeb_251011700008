@@ -8,7 +8,7 @@
 
     <!-- Asset Bootstrap Lokal (Sesuai Petunjuk Soal Poin 5) -->
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     
     <!-- Bootstrap Icons (Lokal & CDN Fallback) -->
     <link rel="stylesheet" href="{{ asset('bootstrap-icons/bootstrap-icons.min.css') }}">
@@ -244,15 +244,18 @@
                             <i class="bi bi-tags-fill me-1"></i> Kategori
                         </a>
                         <ul class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('courses.index') }}">Semua Kategori</a></li>
+                            @php
+                                $targetRoute = request()->routeIs('courses.table') ? 'courses.table' : 'courses.index';
+                            @endphp
+                            <li><a class="dropdown-item" href="{{ route($targetRoute) }}">Semua Kategori</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Web Development']) }}">Web Development</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Programming']) }}">Programming</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Design']) }}">Design</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Data Science']) }}">Data Science</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Cyber Security']) }}">Cyber Security</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Mobile Development']) }}">Mobile Development</a></li>
-                            <li><a class="dropdown-item" href="{{ route('courses.index', ['category' => 'Cloud & DevOps']) }}">Cloud & DevOps</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Web Development']) }}">Web Development</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Programming']) }}">Programming</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Design']) }}">Design</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Data Science']) }}">Data Science</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Cyber Security']) }}">Cyber Security</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Mobile Development']) }}">Mobile Development</a></li>
+                            <li><a class="dropdown-item" href="{{ route($targetRoute, ['category' => 'Cloud & DevOps']) }}">Cloud & DevOps</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -312,7 +315,15 @@
 
     <!-- Asset Bootstrap JS Lokal (Sesuai Petunjuk Soal Poin 5) -->
     <script src="{{ asset('Bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        // Pastikan dropdown dan komponen Bootstrap aktif secara otomatis
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+            dropdownElementList.forEach(function (dropdownToggleEl) {
+                new bootstrap.Dropdown(dropdownToggleEl);
+            });
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>
